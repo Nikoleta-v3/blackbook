@@ -16,4 +16,5 @@ setup(
     url="",
     license="The MIT License (MIT)",
     description="`Black` for Jupyter notebooks.",
+    entry_points={"console_scripts": "blackbook=blackbook.__main__:main"},
 )
