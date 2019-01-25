@@ -1,1 +1,1 @@
-from .main import gen_notebook_files_in_dir
+from .main import gen_notebook_files_in_dir, format_notebook_content
