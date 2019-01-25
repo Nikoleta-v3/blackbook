@@ -5,9 +5,11 @@ import os
 
 requirements = ["black>=18.9b0"]
 
+exec(open("src/blackbook/version.py", "r").read())
+
 setup(
     name="blackbook",
-    version="0.0.1",
+    version=__version__,
     install_requires=requirements,
     author="Nikoleta Glynatsi, Vince Knight, Henry Wilde",
     author_email=("glynatsine@cardiff.ac.uk"),
