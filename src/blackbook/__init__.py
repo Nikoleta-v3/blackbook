@@ -1,5 +1,3 @@
-""""""
-
 from typing import Iterator
 
 import re
@@ -8,6 +6,7 @@ import json
 
 import black
 
+from .version import __version__
 
 def gen_notebook_files_in_dir(path: pathlib.Path) -> Iterator[pathlib.Path]:
 
