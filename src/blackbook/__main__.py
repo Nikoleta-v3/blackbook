@@ -2,17 +2,31 @@ import json
 import pathlib
 import sys
 
+from loguru import logger
+
 import blackbook
 
 
-def main(path:pathlib.Path = None) -> None:
+def main(path: pathlib.Path = None) -> None:
     if path is None:
         path = pathlib.Path(sys.argv[1])
 
+    count = 0
+    reformatted_count = 0
     for notebook_path in blackbook.gen_notebook_files_in_dir(path):
         nb = blackbook.format_notebook_content(notebook_path)
 
-        notebook_path.write_text(json.dumps(nb))
+        if nb is not None:
+            notebook_path.write_text(json.dumps(nb))
+            reformatted_count += 1
 
-if __name__ == '__main__':
+        count += 1
+
+    logger.info(f"All done! 📖")
+    logger.info(
+        f"{reformatted_count} notebooks reformatted. {count - reformatted_count} left unchanged."
+    )
+
+
+if __name__ == "__main__":
     main()

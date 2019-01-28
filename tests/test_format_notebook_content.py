@@ -12,8 +12,15 @@ def test_format_notebook_content():
     formatted_notebook_path = data_path / "formatted_spaces.ipynb"
     expected_content = formatted_notebook_path.read_text()
     expected_json = json.loads(expected_content)
+    assert all(
+        [
+            cell["source"] == expected_cell["source"]
+            for cell, expected_cell in zip(output_json["cells"], expected_json["cells"])
+        ]
+    )
 
-    print(expected_json["cells"])
-    print(output_json["cells"])
-    assert all([cell["source"] == expected_cell["source"] for cell, expected_cell
-            in zip(output_json["cells"], expected_json["cells"])])
+
+def test_format_notebook_content_does_nothing_with_formatted_notebook():
+    data_path = pathlib.Path(f"{__file__}").parent / "data"
+    formatted_notebook_path = data_path / "formatted_spaces.ipynb"
+    assert blackbook.format_notebook_content(formatted_notebook_path) is None
