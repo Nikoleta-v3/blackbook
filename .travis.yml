@@ -4,6 +4,8 @@ python:
 
 install:
   - python setup.py develop
+  - pip install mypy==0.660
 
 script:
   - pytest .
+  - mypy src --ignore-missing-imports

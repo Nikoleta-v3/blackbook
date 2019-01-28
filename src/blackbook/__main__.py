@@ -5,7 +5,7 @@ import sys
 import blackbook
 
 
-def main(path=None):
+def main(path:pathlib.Path = None) -> None:
     if path is None:
         path = pathlib.Path(sys.argv[1])
 
