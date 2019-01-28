@@ -1,4 +1,4 @@
-from typing import Iterator
+from typing import Iterator, Optional
 
 import re
 import pathlib
@@ -14,7 +14,7 @@ def gen_notebook_files_in_dir(path: pathlib.Path) -> Iterator[pathlib.Path]:
     return path.glob("**/*.ipynb")
 
 
-def format_notebook_content(path: pathlib.Path) -> dict:
+def format_notebook_content(path: pathlib.Path) -> Optional[dict]:
     content = path.read_text()
     nb = json.loads(content)
 
@@ -35,3 +35,4 @@ def format_notebook_content(path: pathlib.Path) -> dict:
 
     if modification_found:
         return nb
+    return None
