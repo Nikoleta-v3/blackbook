@@ -5,6 +5,9 @@ import os
 
 requirements = ["black>=18.9b0"]
 
+with open("README.md", "r") as readme:
+    README = readme.read()
+
 exec(open("src/blackbook/version.py", "r").read())
 
 setup(
@@ -18,5 +21,6 @@ setup(
     url="",
     license="The MIT License (MIT)",
     description="`Black` for Jupyter notebooks.",
+    long_description=README,
     entry_points={"console_scripts": "blackbook=blackbook.__main__:main"},
 )
