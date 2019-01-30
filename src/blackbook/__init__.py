@@ -16,21 +16,37 @@ def gen_notebook_files_in_dir(path: pathlib.Path) -> Iterator[pathlib.Path]:
 
 def format_notebook_content(path: pathlib.Path) -> Optional[dict]:
     content = path.read_text()
-    nb = json.loads(content)
 
-    modification_found = False
-    for cell in nb["cells"]:
-        try:
-            string = "".join(cell["source"])
-            formatted_string = black.format_str(
-                string, line_length=black.DEFAULT_LINE_LENGTH
-            )
-            if formatted_string != string:
-                modification_found = True
-                cell["source"] = [s + "\n" for s in formatted_string.split("\n")][:-1]
-        except black.InvalidInput:
+    try:  # Some ipynb files will not contain json
+
+        nb = json.loads(content)
+        modification_found = False
+
+        try:  # Some ipynb files will have no cells
+
+            for cell in nb["cells"]:
+
+                try:  # Some ipynb files will not have valid source code
+                    string = "".join(cell["source"])
+                    formatted_string = black.format_str(
+                        string, line_length=black.DEFAULT_LINE_LENGTH
+                    )
+                    if formatted_string != string:
+                        modification_found = True
+                        cell["source"] = [
+                            s + "\n" for s in formatted_string.split("\n")
+                        ][:-1]
+
+                except black.InvalidInput:
+                    pass
+
+            if modification_found:
+                return nb
+
+        except KeyError:
             pass
 
-    if modification_found:
-        return nb
+    except json.JSONDecodeError:
+        pass
+
     return None
