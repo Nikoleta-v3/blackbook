@@ -1,7 +1,8 @@
-from setuptools import setup, find_packages
-import unittest
 import doctest
 import os
+import unittest
+
+from setuptools import find_packages, setup
 
 requirements = ["black>=18.9b0", "loguru>=0.2.5"]
 
