@@ -9,5 +9,5 @@ install:
 
 script:
   - pytest .
-  - pytest --cov
+  - pytest --cov=blackbook tests
   - mypy src --ignore-missing-imports
