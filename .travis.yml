@@ -7,8 +7,12 @@ install:
   - pip install mypy==0.660
   - pip install pytest
   - pip install pytest-cov
+  - pip install isort
 
 script:
   - pytest .
   - pytest --cov=blackbook tests
   - mypy src --ignore-missing-imports
+  - black -l 80 . --check
+  - isort -rc . --check-only
+  - blackbook .
