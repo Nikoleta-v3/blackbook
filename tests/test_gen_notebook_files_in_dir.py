@@ -8,7 +8,12 @@ def test_gen_notebook_files_in_dir():
 
     nbs = blackbook.gen_notebook_files_in_dir(path)
     expected_nbs_names = sorted(
-        [("unformatted", "spaces.ipynb"), ("formatted", "spaces.ipynb")]
+        [
+            ("unformatted", "spaces.ipynb"),
+            ("formatted", "empty.ipynb"),
+            ("formatted", "no_cells.ipynb"),
+            ("formatted", "spaces.ipynb"),
+        ]
     )
     assert (
         sorted([nb.parts[-2:] for nb in nbs if "checkpoint" not in str(nb)])
