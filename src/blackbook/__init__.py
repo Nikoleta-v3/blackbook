@@ -30,8 +30,6 @@ def format_notebook_content(path: pathlib.Path) -> Optional[dict]:
                 cell["source"] = [s + "\n" for s in formatted_string.split("\n")][:-1]
         except black.InvalidInput:
             pass
-        except KeyError:
-            pass
 
     if modification_found:
         return nb
