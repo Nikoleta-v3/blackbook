@@ -3,7 +3,7 @@ import unittest
 import doctest
 import os
 
-requirements = ["black>=18.9b0"]
+requirements = ["black>=18.9b0", "loguru>=0.2.5"]
 
 exec(open("src/blackbook/version.py", "r").read())
 

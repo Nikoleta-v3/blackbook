@@ -5,7 +5,8 @@ python:
 install:
   - python setup.py develop
   - pip install mypy==0.660
-  - pip install pytest-cov==2.6.1
+  - pip install pytest
+  - pip install pytest-cov
 
 script:
   - pytest .
