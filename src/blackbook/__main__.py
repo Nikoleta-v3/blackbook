@@ -8,7 +8,7 @@ import blackbook
 
 
 def main(path: pathlib.Path = None) -> None:
-    if path is None:
+    if path is None:  # pragma: no cover
         path = pathlib.Path(sys.argv[1])
 
     count = 0
@@ -16,7 +16,7 @@ def main(path: pathlib.Path = None) -> None:
     for notebook_path in blackbook.gen_notebook_files_in_dir(path):
         nb = blackbook.format_notebook_content(notebook_path)
 
-        if nb is not None:
+        if nb is not None:  # pragma: no cover
             notebook_path.write_text(json.dumps(nb))
             reformatted_count += 1
 
@@ -28,5 +28,5 @@ def main(path: pathlib.Path = None) -> None:
     )
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     main()
