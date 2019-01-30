@@ -8,6 +8,7 @@ install:
   - pip install pytest
   - pip install pytest-cov
   - pip install isort
+  - pip install coveralls
 
 script:
   - pytest .
@@ -16,3 +17,6 @@ script:
   - black . --check
   - isort -rc . --check-only
   - blackbook .
+
+after_success:
+  - coveralls
