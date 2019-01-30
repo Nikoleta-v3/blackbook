@@ -13,6 +13,6 @@ script:
   - pytest .
   - pytest --cov=blackbook tests
   - mypy src --ignore-missing-imports
-  - black -l 80 . --check
+  - black . --check
   - isort -rc . --check-only
   - blackbook .
