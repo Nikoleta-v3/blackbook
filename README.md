@@ -29,6 +29,7 @@ There are two `black` implementations for Jupyter notebooks:
 
 - https://github.com/csurfer/blackcellmagic
 - https://github.com/tobinjones/jupyterlab_formatblack
+- https://github.com/betatim/joli
 
 These both work in a given notebook session, `blackbook` will search a directory
 tree and reformat the notebooks in an uncompromising way.
