@@ -1,8 +1,7 @@
-from typing import Iterator, Optional
-
-import re
-import pathlib
 import json
+import pathlib
+import re
+from typing import Iterator, Optional
 
 import black
 
