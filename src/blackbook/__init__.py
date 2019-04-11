@@ -1,8 +1,7 @@
-from typing import Iterator, Optional
-
-import re
-import pathlib
 import json
+import pathlib
+import re
+from typing import Iterator, Optional
 
 import black
 
@@ -28,9 +27,7 @@ def format_notebook_content(path: pathlib.Path) -> Optional[dict]:
 
                 try:  # Some ipynb files will not have valid source code
                     string = "".join(cell["source"])
-                    formatted_string = black.format_str(
-                        string, line_length=black.DEFAULT_LINE_LENGTH
-                    )
+                    formatted_string = black.format_str(string, mode=black.FileMode())
                     if formatted_string != string:
                         modification_found = True
                         cell["source"] = [
