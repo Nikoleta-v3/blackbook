@@ -1,0 +1,8 @@
+-   id: blackbook
+    name: blackbook
+    description: "`Black` for Jupyter notebooks."
+    entry: blackbook .
+    language: python
+    language_version: python3
+    require_serial: true
+    files: '.*\.ipynb'
