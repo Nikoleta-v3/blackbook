@@ -5,4 +5,5 @@
     language: python
     language_version: python3
     require_serial: true
-    files: '*\.ipynb$'
+    files: '.*\.ipynb'
+    exclude: '.*\ipynb_checkpoints'
