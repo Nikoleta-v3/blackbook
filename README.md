@@ -1,5 +1,6 @@
-[![Build
-Status](https://travis-ci.org/Nikoleta-v3/blackbook.svg?branch=master)](https://travis-ci.org/Nikoleta-v3/blackbook)
+[![Build Status](https://travis-ci.org/Nikoleta-v3/blackbook.svg?branch=master)](https://travis-ci.org/Nikoleta-v3/blackbook)
+[![Coverage Status](https://coveralls.io/repos/github/Nikoleta-v3/blackbook/badge.svg?branch=add-coverage-badge)](https://coveralls.io/github/Nikoleta-v3/blackbook?branch=add-coverage-badge)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2553363.svg)](https://doi.org/10.5281/zenodo.2553363)
 
 # blackbook
 
@@ -28,6 +29,7 @@ There are two `black` implementations for Jupyter notebooks:
 
 - https://github.com/csurfer/blackcellmagic
 - https://github.com/tobinjones/jupyterlab_formatblack
+- https://github.com/betatim/joli
 
 These both work in a given notebook session, `blackbook` will search a directory
 tree and reformat the notebooks in an uncompromising way.
