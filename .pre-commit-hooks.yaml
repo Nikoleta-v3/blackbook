@@ -6,4 +6,3 @@
     language_version: python3
     require_serial: true
     files: '.*\.ipynb'
-    exclude: '.*\ipynb_checkpoints'
