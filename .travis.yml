@@ -4,15 +4,14 @@ python:
 
 install:
   - python setup.py develop
-  - pip install mypy==0.660
+  - pip install mypy==0.750
   - pip install pytest
   - pip install pytest-cov
   - pip install isort
   - pip install coveralls
 
 script:
-  - pytest .
-  - pytest --cov=blackbook tests
+  - python -m pytest -r sx
   - mypy src --ignore-missing-imports
   - black . --check
   - isort -rc . --check-only

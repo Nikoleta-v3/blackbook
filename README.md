@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Nikoleta-v3/blackbook.svg?branch=master)](https://travis-ci.org/Nikoleta-v3/blackbook)
+[![GitHub Actions Status: CI](https://github.com/Nikoleta-v3/blackbook/workflows/CI/CD/badge.svg)](https://github.com/Nikoleta-v3/blackbook/actions?query=workflow%3ACI%2FCD+branch%3Amaster)
 [![Coverage Status](https://coveralls.io/repos/github/Nikoleta-v3/blackbook/badge.svg?branch=add-coverage-badge)](https://coveralls.io/github/Nikoleta-v3/blackbook?branch=add-coverage-badge)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2553363.svg)](https://doi.org/10.5281/zenodo.2553363)
 
