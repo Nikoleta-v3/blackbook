@@ -11,8 +11,7 @@ install:
   - pip install coveralls
 
 script:
-  - pytest .
-  - pytest --cov=blackbook tests
+  - python -m pytest -r sx
   - mypy src --ignore-missing-imports
   - black . --check
   - isort -rc . --check-only
