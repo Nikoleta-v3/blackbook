@@ -40,9 +40,9 @@ jobs:
       if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
       run: |
         isort -rc . --check-only
-    - name: Test with pytest
+    - name: Test with pytest 
       run: |
-        python -m pytest -s
+        python -m pytest --cov=blackbook --cov-fail-under=100
     - name: Lint with blackbook
       # Needs to go last, else pytest will fail
       if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
