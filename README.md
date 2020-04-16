@@ -11,9 +11,16 @@
 ```bash
 $ pip install blackbook
 $ blackbook .
-2019-01-28 17:15:10.857 | INFO     | blackbook.__main__:main:25 - All done! 📖
-2019-01-28 17:15:10.857 | INFO     | blackbook.__main__:main:27 - 1 notebooks
-reformatted. 1 left unchanged.
+2019-01-28 17:15:10.857 | INFO     | blackbook.__main__:main:31 - All done! 📖
+2019-01-28 17:15:10.857 | INFO     | blackbook.__main__:main:33 - 1 notebooks reformatted. 1 left unchanged.
+```
+
+You can also run `blackbook` over a single notebook
+
+```bash
+$ blackbook unformatted.ipynb
+2019-01-28 17:15:12.663 | INFO     | blackbook.__main__:main:31 - All done! 📖
+2019-01-28 17:15:12.663 | INFO     | blackbook.__main__:main:33 - 1 notebooks reformatted. 0 left unchanged.
 ```
 
 ## Why?
