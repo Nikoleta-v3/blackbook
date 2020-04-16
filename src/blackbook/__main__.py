@@ -10,6 +10,8 @@ import blackbook
 def main(path: pathlib.Path = None) -> None:
     if path is None:  # pragma: no cover
         path = pathlib.Path(sys.argv[1])
+    if not path.exists():
+        raise OSError(f"The path {path} is invalid.")
 
     count = 0
     reformatted_count = 0
