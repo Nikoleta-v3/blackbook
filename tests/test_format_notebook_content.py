@@ -45,6 +45,7 @@ def test_format_single_notebook():
     blackbook.__main__.main(source_notebook_path)
     output_json = json.loads(source_notebook_path.read_text())
     check_copy_json = json.loads(copy_notebook_path.read_text())
+    # Revert to pre-format state: unformat source notebook and delete copy
     shutil.copy(str(copy_notebook_path), str(source_notebook_path))
     pathlib.Path.unlink(copy_notebook_path)
 
