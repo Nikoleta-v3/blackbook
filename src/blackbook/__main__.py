@@ -15,7 +15,11 @@ def main(path: pathlib.Path = None) -> None:
 
     count = 0
     reformatted_count = 0
-    for notebook_path in blackbook.gen_notebook_files_in_dir(path):
+
+    notebooks = (
+        [path] if path.suffix == ".ipynb" else blackbook.gen_notebook_files_in_dir(path)
+    )
+    for notebook_path in notebooks:
         nb = blackbook.format_notebook_content(notebook_path)
 
         if nb is not None:  # pragma: no cover
