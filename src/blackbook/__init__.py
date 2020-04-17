@@ -32,11 +32,9 @@ def format_notebook_content(path: pathlib.Path) -> Optional[dict]:
                     ).strip()  # Remove trailing newlines
                     if formatted_string != string:
                         modification_found = True
-                        cell_lines = formatted_string.splitlines()
-                        n_last_newline = len(cell_lines) - 1
-                        cell["source"] = [
-                            line + "\n" if itr < n_last_newline else line
-                            for itr, line in enumerate(cell_lines)
+                        cell["source"] = formatted_string.splitlines()
+                        cell["source"][:-1] = [
+                            line + "\n" for line in cell["source"][:-1]
                         ]
 
                 except black.InvalidInput:
