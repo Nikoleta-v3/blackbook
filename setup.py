@@ -26,5 +26,11 @@ setup(
     description="`Black` for Jupyter notebooks.",
     long_description=README,
     long_description_content_type="text/markdown",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+    ],
     entry_points={"console_scripts": "blackbook=blackbook.__main__:main"},
 )
