@@ -27,12 +27,15 @@ def format_notebook_content(path: pathlib.Path) -> Optional[dict]:
 
                 try:  # Some ipynb files will not have valid source code
                     string = "".join(cell["source"])
-                    formatted_string = black.format_str(string, mode=black.FileMode())
+                    formatted_string = black.format_str(
+                        string, mode=black.FileMode()
+                    ).strip()  # Remove trailing newlines
                     if formatted_string != string:
                         modification_found = True
-                        cell["source"] = [
-                            s + "\n" for s in formatted_string.split("\n")
-                        ][:-1]
+                        cell["source"] = formatted_string.splitlines()
+                        cell["source"][:-1] = [
+                            line + "\n" for line in cell["source"][:-1]
+                        ]
 
                 except black.InvalidInput:
                     pass
